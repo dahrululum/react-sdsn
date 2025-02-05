@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
  
 
 import NavbarComponent from './components/NavbarComponent.jsx'
-
+ 
+import ContentComponent from './components/ContentComponent.jsx'
 import DashboardComponent from './components/DashboardComponent.jsx'
 
 function App() {
@@ -11,17 +12,9 @@ function App() {
   return (
     <>
     <NavbarComponent />
+    {/* <ContentComponent /> */}
     <DashboardComponent />
-      <div>
        
-        
-        {/* <ul>
-          {records.map((list,index) => (
-            <li key={index}>{list.title}</li> 
-          ))}
-        </ul> */}
-        
-      </div>
       
     </>
   )
