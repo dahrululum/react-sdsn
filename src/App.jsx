@@ -12,8 +12,8 @@ function App() {
   return (
     <>
     <NavbarComponent />
-    {/* <ContentComponent /> */}
-    <DashboardComponent />
+    <ContentComponent />
+    {/* <DashboardComponent /> */}
        
       
     </>

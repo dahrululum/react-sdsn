@@ -1,14 +1,8 @@
  
-import { getProducts, getComments } from '../services/ProductService'
-import { SdsnService } from '../services/SdsnService';
+ 
 import { useEffect, useState } from 'react'
-
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-
-import Table from 'react-bootstrap/Table';
+ 
+ 
 import ReactPaginate from 'react-paginate';
 
 function DashboardComponent() {
@@ -16,8 +10,9 @@ function DashboardComponent() {
   const [records, setRecords] = useState([])
   const [sdsn, setSdsn] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [pageCount, setPageCount] = useState(0)
 
-   
+  let limit =10;
 
   // useEffect(() => {
   //   SdsnService((data) => {
@@ -28,15 +23,36 @@ function DashboardComponent() {
   // },[])
   
   useEffect(() => {
-    getComments((data) => {
+    const getComments = async () => {
+      const res = await fetch(`https://jsonplaceholder.typicode.com/comments?_limit=${limit}`);
+      const data = await res.json();
+      const total = res.headers.get('X-Total-Count');
+      setPageCount(Math.ceil(total / 10));
+      //console.log(Math.ceil(total / 10));
       setRecords(data);
       setIsLoading(false);
-    });
+    }
+    getComments();
   },[])
    
-  const handlePageClick =  (data) => {
-    console.log(data.selected);
+  //console.log(records);
+  const fetchComments = async (currentPage) => {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`);
+    const data = await res.json();
+    return data;
+   
   }
+
+  const handlePageClick = async (data) => {
+    console.log(data.selected);
+    let currentPage = data.selected + 1;
+    //fetchComments(currentPage);
+    const commFromServer = await fetchComments(currentPage);
+
+    setRecords(commFromServer);
+  }
+
+
   if(isLoading){
     return (
       <div className='container mt-5'>Loading....</div>  )
@@ -104,7 +120,7 @@ function DashboardComponent() {
       previousLabel={"<"}
       nextLabel={">"}
       breakLabel={"..."}
-      pageCount={10}
+      pageCount={pageCount}
       marginPagesDisplayed={2}
       pageRangeDisplayed={5}
       onPageChange={handlePageClick}

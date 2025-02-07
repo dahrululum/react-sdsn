@@ -4,6 +4,7 @@ export const SdsnService = async  (callback) => {
     try {
       const res = await axios.get("https://dna.web.bps.go.id/api/sdsn/list", {
         headers: {
+          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
       });
