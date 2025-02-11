@@ -74,13 +74,14 @@ function ContentComponent() {
   
       
     const handlePageClick = async (page) => {
-      setIsLoading(true);
       console.log(page.selected);
+      // setIsLoading(true);
+      // console.log(page.selected);
       let currentPage = page.selected + 1;
       const dataFromApi = await fetchDataPaginate(currentPage);
       console.log(dataFromApi);
-      setItems(dataFromApi);
-      setIsLoading(false);
+      // setItems(dataFromApi);
+      // setIsLoading(false);
     }
     
     if (isLoading) return <p>Loading...</p>;
@@ -88,7 +89,7 @@ function ContentComponent() {
 
 
     return (
-    <div className="container"> 
+    <div className="container "> 
         <div className=' mt-5'>
       <div className='row'>
         <div className='col'>

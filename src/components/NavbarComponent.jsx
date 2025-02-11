@@ -4,10 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'; 
 function NavbarComponent() {
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
+    
+    <Navbar bg="light" data-bs-theme="light" expand="lg" fixed="top" className='border-bottom'>
+        <Container >
+          <Navbar.Brand href="#home">SDSN</Navbar.Brand>
+          <Nav className="me-5">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
