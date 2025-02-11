@@ -11,6 +11,10 @@ function HomeComponents() {
             </ol>
         </nav>
      </div>
+     <div className='container p-2'> 
+      <h3>Standar Data Statistik Nasional</h3> 
+      <h6>Berdasarkan Keputusan Kepala Badan Pusat Statistik Nomor 850 Tahun 2023</h6>
+     </div>
      
      </>
   )

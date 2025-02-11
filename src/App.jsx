@@ -15,7 +15,7 @@ function App() {
     <>
     <NavbarComponent />
     <HomeComponents />
-    {/* <ContentComponent /> */}
+    <ContentComponent />
     {/* <ExampleApiComponent /> */}
     {/* <DashboardComponent /> */}
      
