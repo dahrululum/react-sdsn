@@ -3,9 +3,9 @@ import React from 'react'
 function HomeComponents() {
   return (
      <>
-     <div className='container p-2 mt-5  '>
+     <div className='container p-2 mt-5 mb-1  '>
         <nav aria-label="breadcrumb">
-            <ol className="breadcrumb">
+            <ol className="breadcrumb mt-2">
                 <li className="breadcrumb-item"><a href="#">Home</a></li>
                 <li className="breadcrumb-item active" aria-current="page">Library</li>
             </ol>
