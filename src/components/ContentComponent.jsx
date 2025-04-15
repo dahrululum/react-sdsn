@@ -3,6 +3,9 @@
 import { useState, useEffect, useCallback } from "react";
 import ReactPaginate from "react-paginate"
 import axios from "axios";
+import SearchIcon from '@mui/icons-material/Search';
+import TitleIcon from '@mui/icons-material/Title';
+
  
 function ContentComponent() {
     const [items, setItems] = useState([]);
@@ -104,23 +107,27 @@ function ContentComponent() {
       <div className='mt-2'>
         <div className='row '>
           <div className="col-12 mb-2">
-            <div className="card">
-              <div className="card-header">
-              <div className="row p-1 justify-content-between">
-                <div className="col-2 ">
-                  <input type="text" placeholder='Cari...' />
+            <div className="card ">
+              <div className="card-header ">
+              <div className="row p-1">
+                <div className="col-2 input-group">
+                  <span className="input-group-text" id="basic-addon1"><SearchIcon /></span>
+                  <input type="text" placeholder='Cari...' className='form-control' />
                 </div>
-                <div className="col-2 ">
-                  <input type="text" placeholder='Kode SDS' />
+                <div className="col-1 input-group">
+                  <span className="input-group-text" id="basic-addon2"><SearchIcon /></span>
+                  <input type="text" placeholder='Kode SDS' className='form-control' />
                 </div>
-                <div className="col-2 ">
-                    <input type="text" placeholder='Nama Data' />
+                <div className="col-2  input-group">
+                  <span className="input-group-text" id="basic-addon3"><TitleIcon color="action" /></span>
+                  <input type="text" placeholder='Nama Data' className='form-control' />
                 </div>
-                <div className="col-2">
-                    <input type="text" placeholder='Konsep' />
+                <div className="col-2  input-group">
+                  <span className="input-group-text" id="basic-addon4"><TitleIcon color="disabled" /></span>
+                  <input type="text" placeholder='Konsep' className='form-control' />
                 </div>
-                <div className="col-2 ">Jumlah Record : </div>
-                
+                {/* <div className="col-2 ">Jumlah Record : </div>
+                 */}
                 
 
                 

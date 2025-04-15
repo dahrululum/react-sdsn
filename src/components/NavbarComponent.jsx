@@ -10,8 +10,8 @@ function NavbarComponent() {
           <Navbar.Brand href="#home">SDSN</Navbar.Brand>
           <Nav className="me-5">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#report">Report</Nav.Link>
+            <Nav.Link href="#panduan">Panduan</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
