@@ -86,12 +86,16 @@ function ContentComponent() {
       // console.log(page.selected);
       let currentPage = page.selected + 1;
       const dataFromApi = await fetchDataPaginate(currentPage);
-      console.log(dataFromApi);
+      //console.log(dataFromApi);
+     // setIsLoading(false);
        setItems(dataFromApi);
-      // setIsLoading(false);
+       
     }
     
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return (
+      <div className="d-flex justify-content-center"><div className="spinner-border" role="status"></div></div>
+    )
+     
     if (error) return <p>Error: {error}</p>;
 
 
